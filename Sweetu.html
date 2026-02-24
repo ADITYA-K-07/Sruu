@@ -202,25 +202,15 @@
   .memory-card:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: 0 22px 50px rgba(255,107,157,0.28); }
 
   .card-photo {
-    width: 100%; height: 200px;
+    width: 100%; height: 220px;
     background: linear-gradient(135deg, var(--soft-pink), #e9d5ff);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
   }
-  .card-photo img { width:100%;height:100%;object-fit:cover;display:none; }
-  .card-photo img.loaded { display: block; }
-  .photo-placeholder { display:flex;flex-direction:column;align-items:center;gap:0.4rem; }
-  .photo-placeholder .ph-icon { font-size:3rem; }
-  .photo-placeholder .ph-text { font-size:0.8rem;color:var(--lavender);font-weight:600; }
-  .upload-overlay {
-    position:absolute;inset:0;background:rgba(255,107,157,0.82);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    opacity:0;transition:opacity 0.3s;gap:0.4rem;
+  .card-photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s ease;
   }
-  .card-photo:hover .upload-overlay { opacity:1; }
-  .upload-overlay .uo-icon { font-size:1.8rem; }
-  .upload-overlay .uo-text { color:white;font-weight:700;font-size:0.9rem; }
-  .upload-input { position:absolute;inset:0;opacity:0;cursor:pointer;z-index:10; }
+  .memory-card:hover .card-photo img { transform: scale(1.06); }
 
   .card-body { padding: 1.4rem 1.5rem; }
   .card-emoji { font-size:1.8rem;display:block;margin-bottom:0.4rem; }
@@ -358,9 +348,9 @@
   <div class="hero-blob blob2"></div>
   <div class="hero-blob blob3"></div>
 
-  <div class="deco-card c1">🎂 It's her day!</div>
-  <div class="deco-card c2">💕 She's amazing</div>
-  <div class="deco-card c3">✨ Best person ever</div>
+  <div class="deco-card c1">🎂 My Babyyyy</div>
+  <div class="deco-card c2">💕 My Princesss</div>
+  <div class="deco-card c3">✨ My cutieee</div>
   <div class="deco-card c4">🎀 Queen of my heart</div>
 
   <div class="hero-inner">
@@ -400,10 +390,8 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <div class="photo-placeholder"><span class="ph-icon">💍</span><span class="ph-text">Upload our photo</span></div>
-        <img id="img-proposal" alt="">
-        <div class="upload-overlay"><span class="uo-icon">📷</span><span class="uo-text">Add our photo</span></div>
-        <input type="file" accept="image/*" class="upload-input" onchange="loadPhoto(this,'img-proposal')">
+        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
+        <img src="rename.jpeg" alt="The Proposal">
       </div>
       <div class="card-body">
         <span class="card-emoji">💍</span>
@@ -415,10 +403,8 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <div class="photo-placeholder"><span class="ph-icon">🚗</span><span class="ph-text">Upload our photo</span></div>
-        <img id="img-drive" alt="">
-        <div class="upload-overlay"><span class="uo-icon">📷</span><span class="uo-text">Add our photo</span></div>
-        <input type="file" accept="image/*" class="upload-input" onchange="loadPhoto(this,'img-drive')">
+        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
+        <img src="Long.jpeg" alt="First Long Drive">
       </div>
       <div class="card-body">
         <span class="card-emoji">🌅</span>
@@ -430,10 +416,8 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <div class="photo-placeholder"><span class="ph-icon">🌹</span><span class="ph-text">Upload our photo</span></div>
-        <img id="img-date" alt="">
-        <div class="upload-overlay"><span class="uo-icon">📷</span><span class="uo-text">Add our photo</span></div>
-        <input type="file" accept="image/*" class="upload-input" onchange="loadPhoto(this,'img-date')">
+        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
+        <img src="YOUR_FIRSTDATE_PHOTO_URL_HERE" alt="First Date">
       </div>
       <div class="card-body">
         <span class="card-emoji">🌹</span>
@@ -445,10 +429,8 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <div class="photo-placeholder"><span class="ph-icon">🌙</span><span class="ph-text">Upload our photo</span></div>
-        <img id="img-night" alt="">
-        <div class="upload-overlay"><span class="uo-icon">📷</span><span class="uo-text">Add our photo</span></div>
-        <input type="file" accept="image/*" class="upload-input" onchange="loadPhoto(this,'img-night')">
+        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
+        <img src="YOUR_FAVOURITENIGHT_PHOTO_URL_HERE" alt="Our Favourite Night">
       </div>
       <div class="card-body">
         <span class="card-emoji">🌙</span>
@@ -593,18 +575,6 @@
   function closeModal(e) { if (e.target===document.getElementById('modalOverlay')) closeModalBtn(); }
   function closeModalBtn() { document.getElementById('modalOverlay').classList.remove('active'); }
 
-  /* photo upload */
-  function loadPhoto(input, imgId) {
-    if (!input.files[0]) return;
-    const reader = new FileReader();
-    reader.onload = e => {
-      const img = document.getElementById(imgId);
-      img.src = e.target.result; img.classList.add('loaded');
-      const ph = img.previousElementSibling;
-      if (ph && ph.classList.contains('photo-placeholder')) ph.style.display='none';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
 
   /* scroll reveal */
   const revObs = new IntersectionObserver(entries => {
