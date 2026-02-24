@@ -297,9 +297,8 @@
   .heart-beat { display:inline-block;animation:hb 1s ease infinite;color:var(--pink); }
   @keyframes hb { 0%,100%{transform:scale(1)} 25%{transform:scale(1.35)} 75%{transform:scale(1.2)} }
 
-  /* ════════════════════
      MODAL
-  ════════════════════ */
+
   .modal-overlay {
     position:fixed;inset:0;background:rgba(45,27,46,0.72);backdrop-filter:blur(10px);
     z-index:1000;display:flex;align-items:center;justify-content:center;
@@ -350,8 +349,9 @@
 
   <div class="deco-card c1">🎂 My Babyyyy</div>
   <div class="deco-card c2">💕 My Princesss</div>
-  <div class="deco-card c3">✨ My cutieee</div>
+  <div class="deco-card c3">😋 My Rasmalaii</div>
   <div class="deco-card c4">🎀 Queen of my heart</div>
+  
 
   <div class="hero-inner">
     <div class="hero-badge"><span class="spin">✨</span> Today is all about you <span class="spin">✨</span></div>
@@ -365,11 +365,11 @@
     </svg>
 
     <p class="hero-tagline">
-      You showed up in my life and turned every ordinary moment<br>into something worth remembering. 🌸
+      You showed up in my life and turned every ordinary moment into special moments. 🌸
     </p>
 
     <div class="hero-stats">
-      <div class="stat-pill"><em>∞</em>&nbsp;reasons I love you</div>
+      <div class="stat-pill"><em>♾️</em>&nbsp;reasons I love you</div>
       <div class="stat-pill"><em>💕</em>&nbsp;butterflies since day 1</div>
       <div class="stat-pill"><em>100%</em>&nbsp;my favourite human</div>
     </div>
@@ -390,8 +390,7 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
-        <img src="rename.jpeg" alt="The Proposal">
+        <img src="rename.jpeg">
       </div>
       <div class="card-body">
         <span class="card-emoji">💍</span>
@@ -403,8 +402,7 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
-        <img src="Long.jpeg" alt="First Long Drive">
+        <img src="Long.jpeg">
       </div>
       <div class="card-body">
         <span class="card-emoji">🌅</span>
@@ -416,8 +414,7 @@
 
     <div class="memory-card">
       <div class="card-photo">
-        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
-        <img src="YOUR_FIRSTDATE_PHOTO_URL_HERE" alt="First Date">
+        <img src="FavDay.jpeg">
       </div>
       <div class="card-body">
         <span class="card-emoji">🌹</span>
@@ -427,19 +424,7 @@
       </div>
     </div>
 
-    <div class="memory-card">
-      <div class="card-photo">
-        <!-- 🖼️ REPLACE src WITH YOUR PHOTO URL -->
-        <img src="YOUR_FAVOURITENIGHT_PHOTO_URL_HERE" alt="Our Favourite Night">
-      </div>
-      <div class="card-body">
-        <span class="card-emoji">🌙</span>
-        <div class="card-title">Our Favourite Night</div>
-        <p class="card-desc">Staying up late doing absolutely nothing together — and it was everything 💫</p>
-        <button class="memory-btn" onclick="openModal('night')">Relive it 🥺</button>
-      </div>
-    </div>
-
+   
   </div>
 </section>
 
@@ -597,11 +582,11 @@
   /* reasons ticker */
   const reasons = [
     '🌸 Your laugh','☀️ How you make everything better','💕 Your big heart',
-    '🌙 Late night talks','🍕 Sharing food with me','🎵 Singing off-key together',
-    '🌺 Your smile','✨ The way you care','🦋 Your adventurous spirit',
-    '🫶 Choosing me every day','🌈 Your positivity','🎀 Your silly jokes',
+    '🌙 Late night talks','🍕You feeding me','🎵 Ur Surili Voice',
+    '🌺 Your smile','✨ The way you care','👀 Your Eyes','🫦 Your Hotness',
+    '🫶 Choosing me every day','🌈 Your company','🎀 Your shhh',
     '💫 How you make me feel','🌷 Your kindness','🥰 Everything about you',
-    '🍦 Ice cream dates','🌙 Your sleepy voice','🎮 Losing to you on purpose'
+    '🍦 The way you eat','🌙 Your naughty feed','🫠 Your Buttery Waist','😘Your Deep Kiss'
   ];
   const track = document.getElementById('tickerTrack');
   [...reasons, ...reasons].forEach(r => {
