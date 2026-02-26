@@ -528,7 +528,7 @@
   /* modal */
   const memories = {
     proposal: { emoji:'💍', title:'The Proposal 💍',
-      text:'I rehearsed it a thousand times in my head. And then the moment came, and everything I planned just vanished — but what I felt was so real and so big that the words still came out perfectly. Because they were just... true. You said yes and my whole world changed in the best way. I love you, Sruu. 🥺' },
+      text:'Aaj bhi yaad hai hume woh lamha, the most beautiful day of my life. Our first hand hold 🤝🏻, our first hug 🫂, our first date, ufff.... The smile on your face while reading the letter still melts my heart when i remember it 💗' },
     drive: { emoji:'🏍️', title:'Our First Long Drive 🌅',
       text:"We didn't even know where we were going. The windows were down, the playlist was a mess, you were singing along to songs you didn't know the words to — and I thought: this is it. This is exactly where I want to be. Every long drive since has been my favourite place in the world. 🌤️" },
     date: { emoji:'🌹', title:'Our Very First Date 🌹',
@@ -539,7 +539,7 @@
 
   function openModal(key) {
     const m = memories[key];
-    document.getElementById('modalEmoji').textContent = m.emoji;
+    document.getElementById('modalEmoji').textContent = m.emoji; 
     document.getElementById('modalTitle').textContent = m.title;
     document.getElementById('modalText').textContent  = m.text;
     document.getElementById('modalOverlay').classList.add('active');
